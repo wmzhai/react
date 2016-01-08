@@ -21,6 +21,18 @@
           }
         },
 
+        getInitialState: function() {
+          return {
+            value: 1
+          }
+        },
+
+        componentDidMount: function() {
+          this.setState({
+            value: this.state.value + 19
+          });
+        },
+
         render: function() {
           var greeting = 'World';
 
@@ -29,7 +41,10 @@
           }
 
           return (
-            <h1>Hello {greeting}</h1>
+              <div>
+                <h1>Hello {greeting}</h1>
+                {this.state.value}
+              </div>
           );
         }
       });
