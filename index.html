@@ -9,9 +9,16 @@
     <div id="area"></div>
     <script type="text/babel">
       var HelloWorld = React.createClass({
+
+
+        getDefaultProps: function() {
+          return {
+            name: 'Scott'
+          }
+        },
         render: function() {
-          return(
-            <h1>Hello World</h1>
+          return (
+            <h1>Hello {this.props.name}</h1>
           );
         }
       });
