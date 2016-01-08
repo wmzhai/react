@@ -22,8 +22,14 @@
         },
 
         render: function() {
+          var greeting = 'World';
+
+          if( this.props.isPerson ){
+            greeting = (<Person name={this.props.name} />)
+          }
+
           return (
-            <h1>Hello <Person name={this.props.name} /></h1>
+            <h1>Hello {greeting}</h1>
           );
         }
       });
@@ -49,7 +55,7 @@
       });
 
       ReactDOM.render(
-        <HelloWorld name="Tim" isPerson={true}/>,
+        <HelloWorld name="Tim" isPerson={false}/>,
         document.getElementById('area')
       );
     </script>
